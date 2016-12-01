@@ -54,23 +54,6 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @return mixed
-     */
-    public function getFormID()
-    {
-        return $this->formid;
-    }
-
-    /**
-     * @param mixed $formid
-     */
-    public function setFormID(string $formid)
-    {
-        $this->formid = $formid;
-    }
-
-
-    /**
      * @return array
      */
     public function getClasses()

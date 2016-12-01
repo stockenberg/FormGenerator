@@ -37,7 +37,7 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
      */
     public function getEnctype()
     {
-        return $this->enctype;
+        return $this->enctype <=> "";
     }
 
     /**

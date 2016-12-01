@@ -18,7 +18,7 @@ $config = [
     [
         "element" => "Input",
         "name" => "firstname",
-        "id" => "myID",
+        "id" => "firstname",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
         "wrapperClasses" => ["huhu", "haha", "hehe"],
@@ -58,7 +58,7 @@ $config = [
     [
         "element" => "Textarea",
         "name" => "message",
-        "id" => "myID",
+        "id" => "message",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
         "wrapperClasses" => ["huhu", "haha", "hehe"],
@@ -67,7 +67,7 @@ $config = [
     [
         "element" => "Select",
         "name" => "selection",
-        "id" => "myID",
+        "id" => "selection",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
         "wrapperClasses" => ["huhu", "haha", "hehe"],
@@ -88,7 +88,9 @@ $config = [
 ];
 
 $formFields->setConfig($config);
-
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
 ?>
 
 <!doctype html>
