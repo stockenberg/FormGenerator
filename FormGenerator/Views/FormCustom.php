@@ -42,7 +42,16 @@ class FormCustom extends FormMaster
 
     protected function prepareSelect(Select $select)
     {
-        return "test";
+        $return = "<div class='{$select->getWrapperClasses()}'>";
+        $return .= "<select class='{$select->getClasses()}' id='{$select->getID()}' {$select->getRequired()} {$select->getDisabled()} name='{$select->getName()}[{$select->getID()}]' {$select->getMultiple()} size='{$select->getSize()}'>";
+        $return .= "<option disabled selected>Bitte Wählen</option>";
+        foreach ($select->getOptions() as $value => $text) {
+            $return .= "<option value='{$value}'>{$text}</option>";
+        }
+        $return .= "</select>";
+        $return .= "</div>";
+        return $return;
+
     }
 
 

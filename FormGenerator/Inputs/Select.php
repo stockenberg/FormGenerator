@@ -12,25 +12,61 @@ namespace FormGenerator\Inputs;
 
 class Select extends FormElement implements \FormGenerator\Interfaces\Select
 {
-    private $option;
-    private $optKey;
-    private $optVal;
+    private $multiple;
+    private $size;
+    private $options = [];
+
+    /**
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
+     * @param array $option
+     */
+    public function setOptions(array $option)
+    {
+        $this->options = $option;
+    }
+
+
 
     /**
      * @return mixed
      */
-    public function getOption()
+    public function getMultiple()
     {
-        return $this->option;
+        return $this->multiple;
     }
 
     /**
-     * @param mixed $option
+     * @param mixed $multiple
      */
-    public function setOption($option)
+    public function setMultiple($multiple = "")
     {
-        $this->option = $option;
+        $this->multiple = $multiple;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @param mixed $size
+     */
+    public function setSize(string $size)
+    {
+        $this->size = $size;
+    }
+
+
 
 
 }
