@@ -10,6 +10,7 @@ namespace FormGenerator\Views;
 
 
 use FormGenerator\Inputs\FormMaster;
+use FormGenerator\Interfaces\Form;
 use FormGenerator\Interfaces\Input;
 use FormGenerator\Interfaces\Select;
 use FormGenerator\Interfaces\Textarea;
@@ -34,5 +35,9 @@ class FormBootstrap extends FormMaster
         // TODO: Implement prepareSelect() method.
     }
 
+    protected function prepareForm(Form $form)
+    {
+        // TODO: Implement prepareForm() method.
+    }
 
 }

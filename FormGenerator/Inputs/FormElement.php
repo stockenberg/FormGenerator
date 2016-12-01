@@ -19,6 +19,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     private $disabled;
     private $required;
     private $wrapperClasses = [];
+    protected $formid;
 
     /**
      * @return mixed
@@ -51,6 +52,23 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     {
         $this->ID = $ID;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFormID()
+    {
+        return $this->formid;
+    }
+
+    /**
+     * @param mixed $formid
+     */
+    public function setFormID(string $formid)
+    {
+        $this->formid = $formid;
+    }
+
 
     /**
      * @return array
@@ -131,12 +149,6 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     {
         $this->wrapperClasses = $wrapperClasses;
     }
-
-
-
-
-
-
 
 
 }

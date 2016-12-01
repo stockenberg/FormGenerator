@@ -8,15 +8,21 @@
 
 namespace FormGenerator\Inputs;
 
+use FormGenerator\Interfaces\Form;
 use FormGenerator\Interfaces\Input;
 use FormGenerator\Interfaces\Select;
 use FormGenerator\Interfaces\Textarea;
 
 abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
 {
-
     protected $config = array();
     protected $field;
+    protected $formid;
+
+    public function __construct(string $formid)
+    {
+        $this->formid = $formid;
+    }
 
     /**
      * Define Form-Array
@@ -32,6 +38,7 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
         return $this->config;
     }
 
+
     private function parseInput()
     {
         return $this->parse(new \FormGenerator\Inputs\Input());
@@ -39,6 +46,7 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
 
     private function parseSelect()
     {
+
         return $this->parse(new \FormGenerator\Inputs\Select());
     }
 
@@ -47,12 +55,19 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
         return $this->parse(new \FormGenerator\Inputs\Textarea());
     }
 
+    private function parseForm()
+    {
+        return $this->parse(new \FormGenerator\Inputs\Form());
+    }
+
 
     abstract protected function prepareInput(Input $input);
 
     abstract protected function prepareTextarea(Textarea $input);
 
     abstract protected function prepareSelect(Select $input);
+
+    abstract protected function prepareForm(Form $form);
 
     private function parse(\FormGenerator\Interfaces\FormElement $element)
     {
@@ -70,7 +85,8 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
     }
 
 
-    final public function Output(){
+    final public function Output()
+    {
         $return = "";
         foreach ($this->getConfig() as $row => $field) {
             $Output = "parse" . $field["element"];

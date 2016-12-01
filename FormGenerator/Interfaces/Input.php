@@ -12,9 +12,11 @@ namespace FormGenerator\Interfaces;
 interface Input extends FormElement
 {
     public function setType(string $type);
+
     public function getType();
 
     public function setValue(string $value);
+
     public function getValue();
 
 }

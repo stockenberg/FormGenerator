@@ -9,7 +9,6 @@
 namespace FormGenerator\Inputs;
 
 
-
 class Select extends FormElement implements \FormGenerator\Interfaces\Select
 {
     private $multiple;
@@ -31,7 +30,6 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
     {
         $this->options = $option;
     }
-
 
 
     /**
@@ -65,8 +63,6 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
     {
         $this->size = $size;
     }
-
-
 
 
 }

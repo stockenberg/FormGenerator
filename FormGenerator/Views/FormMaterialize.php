@@ -12,6 +12,7 @@ namespace FormGenerator\Views;
 
 
 use FormGenerator\Inputs\FormMaster;
+use FormGenerator\Interfaces\Form;
 use FormGenerator\Interfaces\Input;
 use FormGenerator\Interfaces\Select;
 use FormGenerator\Interfaces\Textarea;
@@ -21,7 +22,7 @@ class FormMaterialize extends FormMaster
     protected function prepareInput(Input $input)
     {
         // TODO: Implement prepareInput() method.
-        echo "test";
+
     }
 
     protected function prepareTextarea(Textarea $input)
@@ -32,6 +33,11 @@ class FormMaterialize extends FormMaster
     protected function prepareSelect(Select $input)
     {
         // TODO: Implement prepareSelect() method.
+    }
+
+    protected function prepareForm(Form $form)
+    {
+        // TODO: Implement prepareForm() method.
     }
 
 

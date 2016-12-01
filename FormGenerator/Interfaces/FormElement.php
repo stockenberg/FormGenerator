@@ -40,4 +40,8 @@ interface FormElement
 
     function getWrapperClasses();
 
+    public function getFormID();
+
+    public function setFormID(string $formid);
+
 }

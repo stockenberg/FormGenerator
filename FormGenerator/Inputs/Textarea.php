@@ -31,5 +31,4 @@ class Textarea extends FormElement implements \FormGenerator\Interfaces\Textarea
     }
 
 
-
 }

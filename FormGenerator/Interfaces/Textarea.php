@@ -12,7 +12,8 @@ namespace FormGenerator\Interfaces;
 interface Textarea extends FormElement
 {
 
-    function setText(string $test);
+    function setText(string $text);
+
     function getText();
 
 }
