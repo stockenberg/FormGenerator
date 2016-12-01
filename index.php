@@ -17,7 +17,7 @@ $config = [
     ],
     [
         "element" => "Input",
-        "name" => "myName",
+        "name" => "firstname",
         "id" => "myID",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
@@ -27,7 +27,7 @@ $config = [
     ],
     [
         "element" => "Input",
-        "name" => "myName",
+        "name" => "payment",
         "id" => "paypal",
         "label" => "Paypal",
         "classes" => ["huhu", "haha", "hehe"],
@@ -37,7 +37,7 @@ $config = [
     ],
     [
         "element" => "Input",
-        "name" => "myName",
+        "name" => "payment",
         "id" => "sofort",
         "label" => "Sofort",
         "classes" => ["huhu", "haha", "hehe"],
@@ -47,7 +47,7 @@ $config = [
     ],
     [
         "element" => "Input",
-        "name" => "myName",
+        "name" => "payment",
         "id" => "prepaid",
         "label" => "Prepaid",
         "classes" => ["huhu", "haha", "hehe"],
@@ -57,16 +57,16 @@ $config = [
     ],
     [
         "element" => "Textarea",
-        "name" => "myName",
+        "name" => "message",
         "id" => "myID",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
         "wrapperClasses" => ["huhu", "haha", "hehe"],
         "text" => ""
     ],
-[
+    [
         "element" => "Select",
-        "name" => "myName",
+        "name" => "selection",
         "id" => "myID",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
@@ -78,11 +78,21 @@ $config = [
             "hihih" => "haha",
         ],
     ],
+    [
+        "element" => "Input",
+        "name" => "submit",
+        "value" => "Abschicken",
+        "type" => "submit"
+    ]
 
 ];
 
 $formFields->setConfig($config);
 echo $formFields->Output();
+
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
 
 
 ?>
