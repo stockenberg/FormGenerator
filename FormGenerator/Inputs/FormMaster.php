@@ -56,15 +56,16 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
 
     private function parse(\FormGenerator\Interfaces\FormElement $element)
     {
+        $prepareInput = "";
         foreach ($this->field as $attr => $values) {
             if ($attr != "element") {
                 $function = "set" . $attr;
                 $element->$function($values);
             } else {
                 $prepareInput = "prepare" . $values;
-                return $this->$prepareInput($element);
             }
         }
+        return $this->$prepareInput($element);
 
     }
 

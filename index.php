@@ -11,18 +11,32 @@ $formFields = new \FormGenerator\Views\FormCustom();
 
 $config = [
     [
+        "element" => "Select",
         "name" => "myName",
         "id" => "myID",
         "label" => "Vorname",
         "classes" => ["huhu", "haha", "hehe"],
         "wrapperClasses" => ["huhu", "haha", "hehe"],
         "options" => [
-          "huhu" => "haha",
-          "gege" => "haha",
-          "hahaha" => "haha",
-          "hihih" => "haha",
+            "huhu" => "haha",
+            "gege" => "haha",
+            "hahaha" => "haha",
+            "hihih" => "haha",
         ],
+    ],
+    [
         "element" => "Select",
+        "name" => "myName",
+        "id" => "myID",
+        "label" => "Vorname",
+        "classes" => ["huhu", "haha", "hehe"],
+        "wrapperClasses" => ["huhu", "haha", "hehe"],
+        "options" => [
+            "huhu" => "haha",
+            "gege" => "haha",
+            "hahaha" => "haha",
+            "hihih" => "haha",
+        ],
     ],
 
 ];
