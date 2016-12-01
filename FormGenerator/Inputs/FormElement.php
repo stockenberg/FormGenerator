@@ -113,9 +113,9 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     /**
      * @param mixed $disabled
      */
-    public function setDisabled(string $disabled = "")
+    public function setDisabled(string $disabled)
     {
-        $this->disabled = $disabled;
+        $this->disabled = $disabled <=> "";
     }
 
     /**
@@ -129,9 +129,9 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     /**
      * @param mixed $required
      */
-    public function setRequired(string $required = "")
+    public function setRequired(string $required)
     {
-        $this->required = $required;
+        $this->required = $required <=> "";
     }
 
     /**

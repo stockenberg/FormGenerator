@@ -28,11 +28,11 @@ interface FormElement
 
     function getLabel();
 
-    function setDisabled(string $disabled = "");
+    function setDisabled(string $disabled);
 
     function getDisabled();
 
-    function setRequired(string $required = "");
+    function setRequired(string $required);
 
     function getRequired();
 

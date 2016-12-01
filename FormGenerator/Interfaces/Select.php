@@ -21,7 +21,7 @@ interface Select extends FormElement
     public function getMultiple();
 
 
-    public function setMultiple($multiple = "");
+    public function setMultiple($multiple);
 
 
     public function getSize();

@@ -43,9 +43,9 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
     /**
      * @param mixed $multiple
      */
-    public function setMultiple($multiple = "")
+    public function setMultiple($multiple)
     {
-        $this->multiple = $multiple;
+        $this->multiple = $multiple <=> "";
     }
 
     /**
@@ -61,7 +61,7 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
      */
     public function setSize(string $size)
     {
-        $this->size = $size;
+        $this->size = $size <=> 0;
     }
 
 
