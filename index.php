@@ -22,7 +22,7 @@ $config = [
         "label" => "Firstname",
         "element" => "Input",
         "classes" => "validate",
-        "wrapperClasses" => "col m5 l5 s5 push-m2",
+        "wrapperClasses" => "col m5 l5 s5 push-l2",
         "type" => "text",
         "after" => "</div>",
     ],
@@ -36,7 +36,7 @@ $config = [
     [
         "label" => "Message",
         "element" => "Textarea",
-        "classes" => "",
+        "classes" => "validate",
         "wrapperClasses" => "row col m12 l12 s12"
     ],
     [
@@ -45,7 +45,7 @@ $config = [
         "type" => "checkbox-switch",
         "ID" => "agb",
         "classes" => "",
-        "wrapperClasses" => "row col push-m7 m5 l5 s5"
+        "wrapperClasses" => "row col m5 l5 s5"
     ],
     [
         "element" => "Input",
@@ -77,6 +77,20 @@ $formFields->setConfig($config);
         <?= $formFields->Output(); ?>
     </form>
 </div>
+<div class="row">
+    <div class="s7 m7" style="margin: auto;">
+        <div class="card blue-grey lighten-1">
+            <div class="card-content white-text">
+                <span class="card-title">Configuration</span>
+                <pre style="width: 60%; margin: auto;">
+                    <?php htmlentities(print_r($config)) ?>
+                </pre>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </body>
