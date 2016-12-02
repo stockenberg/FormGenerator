@@ -241,6 +241,7 @@ $form->form = "end";
 
     <pre style="padding: 50px; width: 40%; position: fixed; left: 0; top: 0; height: 100%; overflow-y: scroll"
          class="sh_php">
+$form = new \FormGenerator\Views\FormMaterialize();
 
 $form->addElement("Form");
 $form->form = "start";
