@@ -39,7 +39,7 @@ class FormCustom extends FormMaster
             {$input->getBefore()}
                 <div class='{$input->getWrapperClasses()}'>
                     <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                    <textarea form='{$this->formid}' id='{$input->getID()}' 
+                    <textarea form='{$this->formid}' id='{$input->getID()}' class='{$input->getClasses()}'
                                 name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}
                     </textarea>
                 </div>

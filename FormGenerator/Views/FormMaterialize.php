@@ -21,8 +21,8 @@ class FormMaterialize extends FormMaster
     {
 
         switch ($input->getType()) {
-            case "checkbox-slider":
-                return $this->checkbox_slider($input);
+            case "checkbox-switch":
+                return $this->checkbox_switch($input);
                 break;
 
             case "checkbox":
@@ -36,10 +36,10 @@ class FormMaterialize extends FormMaster
             default:
                 return "
                 {$input->getBefore()}
-                    <div class='{$input->getWrapperClasses()}'>
+                    <div class='input-field {$input->getWrapperClasses()}'>
                         <label for='{$input->getID()}'>{$input->getLabel()}</label>
                         <input form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
-                                class='input-field {$input->getClasses()}'
+                                class='{$input->getClasses()}'
                                 {$input->getMin()} {$input->getMax()}
                                 type='{$input->getType()}' 
                                 id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
@@ -55,12 +55,21 @@ class FormMaterialize extends FormMaster
 
     protected function prepareTextarea(Textarea $input)
     {
-        // TODO: Implement prepareTextarea() method.
+        return "
+            {$input->getBefore()}
+                <div class='input-field {$input->getWrapperClasses()}'>
+                    <label for='{$input->getID()}'>{$input->getLabel()}</label>
+                    <textarea form='{$this->formid}' id='{$input->getID()}' class='materialize-textarea {$input->getClasses()}'
+                                name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}</textarea>
+                </div>
+            {$input->getAfter()}
+       
+        ";
     }
 
     protected function prepareSelect(Select $input)
     {
-        // TODO: Implement prepareSelect() method.
+
     }
 
     protected function prepareForm(Form $form)
@@ -68,7 +77,7 @@ class FormMaterialize extends FormMaster
         // TODO: Implement prepareForm() method.
     }
 
-    private function checkbox_slider(Input $input)
+    private function checkbox_switch(Input $input)
     {
         return "
             {$input->getBefore()}
