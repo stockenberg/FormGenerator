@@ -9,38 +9,27 @@
 namespace FormGenerator\Inputs;
 
 
-class Textarea extends FormElement implements \FormGenerator\Interfaces\Textarea
+class Textarea extends FormElement implements \FormGenerator\Interfaces\TextareaInterface
 {
 
     private $text;
     private $length;
-    /**
-     * @return mixed
-     */
+
     public function getText()
     {
         return $this->text;
     }
 
-    /**
-     * @param mixed $text
-     */
     public function setText(string $text)
     {
         $this->text = $text;
     }
 
-    /**
-     * @return mixed
-     */
     public function getLength()
     {
         return $this->length;
     }
 
-    /**
-     * @param mixed $length
-     */
     public function setLength(string $length)
     {
         $this->length = $length;

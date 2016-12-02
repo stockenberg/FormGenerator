@@ -13,7 +13,7 @@ namespace FormGenerator\Inputs;
  * Class Form
  * @package FormGenerator\Inputs
  */
-class Form extends FormElement implements \FormGenerator\Interfaces\Form
+class Form extends FormElement implements \FormGenerator\Interfaces\FormInterface
 {
 
     /**
@@ -29,53 +29,50 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
      */
     private $method;
 
-    /**
-     * @return mixed
-     */
+    private $form;
+
+
     public function getAction()
     {
         return $this->action;
     }
 
-    /**
-     * @param string $action
-     */
     public function setAction(string $action)
     {
-        $this->action = $action;
+        $this->action = "action='{$action}'";
     }
 
-    /**
-     * @return bool
-     */
     public function getEnctype()
     {
-        return $this->enctype <=> "";
+        return $this->enctype;
     }
 
-    /**
-     * @param string $enctype
-     */
     public function setEnctype(string $enctype)
     {
-        $this->enctype = $enctype;
+        $this->enctype = "enctype='{$enctype}'";
     }
 
-    /**
-     * @return mixed
-     */
     public function getMethod()
     {
         return $this->method;
     }
 
-    /**
-     * @param string $method
-     */
     public function setMethod(string $method)
     {
-        $this->method = $method;
+        $this->method = "method='{$method}'";
     }
+
+    public function getForm()
+    {
+        return $this->form;
+    }
+
+    public function setForm(string $form)
+    {
+        $this->form = $form;
+    }
+
+
 
 
 }

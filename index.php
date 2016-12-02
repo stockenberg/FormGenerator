@@ -7,57 +7,67 @@
  */
 require "vendor/autoload.php";
 
-$formFields = new \FormGenerator\Views\FormMaterialize("Register");
+$form = new \FormGenerator\Views\FormMaterialize();
 
-$config = [
-    [
-        "before" => "div.row",
-        "label" => "Firstname",
-        "element" => "Input",
-        "classes" => "validate",
-        "placeholder" => "mymessage",
-        "wrapperClasses" => "row col m5 l5 s5",
-        "type" => "text"
-    ],
-    [
-        "label" => "Firstname",
-        "element" => "Input",
-        "classes" => "validate",
-        "wrapperClasses" => "row col m5 l5 s5 push-l2",
-        "type" => "text",
-        "after" => "div",
-    ],
-    [
-        "label" => "E-Mail-Adresse",
-        "element" => "Input",
-        "classes" => "validate",
-        "wrapperClasses" => "row col m12 l12 s12 ",
-        "type" => "email",
-    ],
-    [
-        "label" => "Message",
-        "element" => "Textarea",
-        "classes" => "validate",
-        "wrapperClasses" => "row col m12 l12 s12"
-    ],
-    [
-        "label" => "Ich akzeptiere die <a href='agb'>AGB</a>",
-        "element" => "Input",
-        "type" => "checkbox-switch",
-        "ID" => "agb",
-        "classes" => "",
-        "wrapperClasses" => "row col m5 l5 s5"
-    ],
-    [
-        "element" => "Input",
-        "value" => "submit",
-        "type" => "submit",
-        "classes" => "btn col m12 s12 l12"
-    ],
+$form->addElement("Form");
+$form->form = "start";
+$form->action = "#";
+$form->method = "post";
+$form->id = "Register";
+
+$form->addElement("Select");
+$form->name = "Register[anrede]";
+$form->classes = "validate";
+$form->multiple = "multiple";
+$form->options = [
+    "herr" => "Herr",
+    "frau" => "Frau"
 ];
 
-$formFields->setConfig($config);
+$form->addElement("Input");
+$form->before = "<div class='row'>";
+$form->label = "Firstname";
+$form->classes = "validate";
+$form->placeholder = "myMessage";
+$form->wrapperClasses = "col m5 l5 s5";
+$form->type = "text";
 
+$form->addElement("Input");
+$form->after = "</div>";
+$form->label = "Lastname";
+$form->classes = "validate";
+$form->placeholder = "type in your Lastname";
+$form->wrapperClasses = "col m5 l5 s5 push-l2 push-m2";
+$form->type = "text";
+
+$form->addElement("Input");
+$form->label = "E-Mail-Adresse";
+$form->element = "Input";
+$form->classes = "validate";
+$form->wrapperClasses = "row m12 l12 s12 ";
+$form->type = "email";
+
+$form->addElement("Textarea");
+$form->label = "Nachricht";
+$form->classes = "validate";
+$form->wrapperClasses = "row m12 l12 s12 ";
+
+$form->addElement("Input");
+$form->type = "checkbox-switch";
+$form->ID = "agb";
+$form->classes = "";
+$form->wrapperClasses = "row m12 l12 s12";
+$form->label = "Ich akzeptiere die <a href='agb'>AGB</a>";
+
+$form->addElement("Input");
+$form->type = "input";
+$form->value = "submit";
+$form->classes = "btn m12 l12 s12";
+$form->wrapperClasses = "row m12 s12 l12";
+
+
+$form->addElement("Form");
+$form->form = "end";
 
 ?>
 
@@ -74,25 +84,15 @@ $formFields->setConfig($config);
 <body>
 <br/><br/><br/><br/>
 <div class="row" style="width: 60%; margin: auto;">
-    <form action="">
-        <?= $formFields->Output(); ?>
-    </form>
-</div>
-<div class="row">
-    <div class="s7 m7" style="margin: auto;">
-        <div class="card blue-grey lighten-1">
-            <div class="card-content white-text">
-                <span class="card-title">Configuration</span>
-                <pre style="width: 60%; margin: auto;">
-                    <?php htmlentities(print_r($config)) ?>
-                </pre>
-            </div>
-
-        </div>
-    </div>
+    <?= $form->Output(); ?>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </body>
 </html>

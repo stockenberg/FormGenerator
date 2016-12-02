@@ -13,14 +13,8 @@ namespace FormGenerator\Interfaces;
  * Interface FormMaster
  * @package FormGenerator\Interfaces
  */
-interface FormMaster
+interface FormMasterInterface
 {
-
-    /**
-     * @param array $config
-     * @return mixed
-     */
-    function setConfig(array $config);
 
     /**
      * @return mixed

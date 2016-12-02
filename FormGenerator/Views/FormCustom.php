@@ -12,18 +12,21 @@ namespace FormGenerator\Views;
 use FormGenerator\Inputs\FormMaster;
 use FormGenerator\Interfaces\Form;
 use FormGenerator\Interfaces\Input;
+use FormGenerator\Interfaces\InputInterface;
 use FormGenerator\Interfaces\Select;
+use FormGenerator\Interfaces\SelectInterface;
 use FormGenerator\Interfaces\Textarea;
+use FormGenerator\Interfaces\TextareaInterface;
 
 class FormCustom extends FormMaster
 {
 
-    protected function prepareInput(Input $input)
+    protected function prepareInput(InputInterface $input)
     {
         return "{$input->getBefore()}
                     <div class='{$input->getWrapperClasses()}'>
                         <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                        <input {$input->getPlaceholder()} form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
+                        <input {$input->getPlaceholder()} name='{$input->getName()}' 
                                 class='{$input->getClasses()}'
                                 type='{$input->getType()}' 
                                 id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
@@ -33,25 +36,25 @@ class FormCustom extends FormMaster
         ";
     }
 
-    protected function prepareTextarea(Textarea $input)
+    protected function prepareTextarea(TextareaInterface $input)
     {
         return "
             {$input->getBefore()}
                 <div class='{$input->getWrapperClasses()}'>
                     <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                    <textarea {$input->getPlaceholder()} form='{$this->formid}' id='{$input->getID()}' class='{$input->getClasses()}'
-                                name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}
+                    <textarea {$input->getPlaceholder()} id='{$input->getID()}' class='{$input->getClasses()}'
+                                name='{$input->getName()}' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}
                     </textarea>
                 </div>
             {$input->getAfter()}
         ";
     }
 
-    protected function prepareSelect(Select $input)
+    protected function prepareSelect(SelectInterface $input)
     {
         $return = "{$input->getBefore()}<div class='{$input->getWrapperClasses()}'>";
-            $return .= "<select form='{$this->formid}' class='{$input->getClasses()}' 
-                                id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} name='{$this->formid}[{$input->getName()}]' {$input->getMultiple()} 
+            $return .= "<select  class='{$input->getClasses()}' 
+                                id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} name='{$input->getName()}' {$input->getMultiple()} 
                                 size='{$input->getSize()}'>";
                 $return .= "<option disabled selected>Bitte Wählen</option>";
                 foreach ($input->getOptions() as $value => $text) {
@@ -62,14 +65,6 @@ class FormCustom extends FormMaster
 
         return $return;
 
-    }
-
-    protected function prepareForm(Form $input)
-    {
-        return "<form action='{$input->getAction()}' 
-                        method='{$input->getMethod()}' 
-                        enctype='{$input->getEnctype()}' id='{$this->formid}' class='{$input->getClasses()}'>
-                </form>";
     }
 
 

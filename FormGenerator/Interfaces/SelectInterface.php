@@ -13,7 +13,7 @@ namespace FormGenerator\Interfaces;
  * Interface Select
  * @package FormGenerator\Interfaces
  */
-interface Select extends FormElement
+interface SelectInterface extends FormElementInterface
 {
 
     /**

@@ -13,7 +13,7 @@ namespace FormGenerator\Interfaces;
  * Interface FormElement
  * @package FormGenerator\Interfaces
  */
-interface FormElement
+interface FormElementInterface
 {
 
     /**
@@ -127,36 +127,6 @@ interface FormElement
      */
     function getAfter();
 
-    /**
-     * @param string $checked
-     * @return mixed
-     */
-    function setChecked(string $checked);
 
-    /**
-     * @return mixed
-     */
-    function getChecked();
 
-    /**
-     * @return mixed
-     */
-    public function getMin();
-
-    /**
-     * @param string $min
-     * @return mixed
-     */
-    public function setMin(string $min);
-
-    /**
-     * @return mixed
-     */
-    public function getMax();
-
-    /**
-     * @param string $max
-     * @return mixed
-     */
-    public function setMax(string $max);
 }

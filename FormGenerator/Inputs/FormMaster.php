@@ -8,21 +8,21 @@
 
 namespace FormGenerator\Inputs;
 
-use FormGenerator\Interfaces\Form;
-use FormGenerator\Interfaces\Input;
-use FormGenerator\Interfaces\Select;
-use FormGenerator\Interfaces\Textarea;
+
+use FormGenerator\Interfaces\FormInterface;
+use FormGenerator\Interfaces\InputInterface;
+use FormGenerator\Interfaces\SelectInterface;
+use FormGenerator\Interfaces\TextareaInterface;
 
 /**
  * Class FormMaster
  * @package FormGenerator\Inputs
  */
-abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
+class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
 {
-    /**
-     * @var array
-     */
     protected $config = array();
+    private $count = -1;
+
     /**
      * @var
      */
@@ -30,33 +30,64 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
     /**
      * @var string
      */
-    protected $formid;
 
     /**
-     * FormMaster constructor.
-     * @param string $formid
+     * Expects an two dimensional array, each sub-array represents an form-element
+     *
+     * e.g. $config([first-element], [scnd-element] ... )
+     *
+     * # Global
+     * - name
+     * - ID
+     * - classes "first scnd third ..."
+     * - wrapperClasses "first scnd third ..."
+     * - label
+     * - disabled
+     * - required
+     * - after "htmlmarkup will be inserted after this element"
+     * - before "htmlmarkup will be inserted before this element"
+     * - checked
+     * - placeholder
+     *
+     * # Input Specific
+     * - type
+     * - value
+     * - min (for input type range)
+     * - max (for input type range)
+     * - checked
+     *
+     * # Select Specific
+     * - multiple
+     * - size
+     * - options array key => value
+     *
+     * # Textarea Specific
+     * - text
+     * - length
+     *
+     * # Form Specific
+     * - action
+     * - method
+     * - enctype
+     *
      */
-    public function __construct(string $formid)
+
+    public function __set($name, $value)
     {
-        $this->formid = $formid;
+        $this->config[$this->count][$name] = $value;
     }
 
-    /**
-     * @param array $config
-     */
-    public function setConfig(array $config)
-    {
-        $this->config = $config;
+    public function addElement(string $element){
+        $this->count++;
+        $this->config[$this->count]["element"] = $element;
     }
-
     /**
      * @return array
      */
-    private function getConfig()
+    protected function getConfig()
     {
         return $this->config;
     }
-
 
     /**
      * @return mixed
@@ -93,34 +124,47 @@ abstract class FormMaster implements \FormGenerator\Interfaces\FormMaster
 
 
     /**
+     * @param Form $input
+     * @return string if getForm() == start - returns starting Formtag || getForm() == end return form Endtag
+     */
+    protected function prepareForm(FormInterface $input)
+    {
+        switch ($input->getForm()){
+            case "start":
+                return "<form {$input->getAction()} {$input->getMethod()} {$input->getEnctype()} id='{$input->getID()}' class='{$input->getClasses()}'>";
+                break;
+
+            case "end":
+                return "</form>";
+                break;
+        }
+
+    }
+
+    /**
      * @param Input $input
      * @return mixed
      */
-    abstract protected function prepareInput(Input $input);
+    protected function prepareInput(InputInterface $input){}
 
     /**
      * @param Textarea $input
      * @return mixed
      */
-    abstract protected function prepareTextarea(Textarea $input);
+    protected function prepareTextarea(TextareaInterface $input){}
 
     /**
      * @param Select $input
      * @return mixed
      */
-    abstract protected function prepareSelect(Select $input);
+    protected function prepareSelect(SelectInterface $input){}
+
 
     /**
-     * @param Form $form
+     * @param FormElement $element
      * @return mixed
      */
-    abstract protected function prepareForm(Form $form);
-
-    /**
-     * @param \FormGenerator\Interfaces\FormElement $element
-     * @return mixed
-     */
-    private function parse(\FormGenerator\Interfaces\FormElement $element)
+    private function parse(FormElement $element)
     {
         $prepareInput = "";
         foreach ($this->field as $attr => $values) {

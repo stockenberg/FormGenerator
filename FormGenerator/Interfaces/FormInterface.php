@@ -13,7 +13,7 @@ namespace FormGenerator\Interfaces;
  * Interface Form
  * @package FormGenerator\Interfaces
  */
-interface Form extends FormElement
+interface FormInterface extends FormElementInterface
 {
     /**
      * @param string $action
@@ -47,4 +47,8 @@ interface Form extends FormElement
      * @return mixed
      */
     function getEnctype();
+
+    public function getForm();
+
+    public function setForm(string $form);
 }

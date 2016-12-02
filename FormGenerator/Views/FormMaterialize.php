@@ -10,14 +10,14 @@ namespace FormGenerator\Views;
 
 
 use FormGenerator\Inputs\FormMaster;
-use FormGenerator\Interfaces\Form;
-use FormGenerator\Interfaces\Input;
-use FormGenerator\Interfaces\Select;
-use FormGenerator\Interfaces\Textarea;
+use FormGenerator\Interfaces\InputInterface;
+use FormGenerator\Interfaces\SelectInterface;
+use FormGenerator\Interfaces\TextareaInterface;
 
 class FormMaterialize extends FormMaster
 {
-    protected function prepareInput(Input $input)
+
+    protected function prepareInput(InputInterface $input)
     {
 
         switch ($input->getType()) {
@@ -38,7 +38,7 @@ class FormMaterialize extends FormMaster
                 {$input->getBefore()}
                     <div class='input-field {$input->getWrapperClasses()}'>
                         <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                        <input form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
+                        <input  name='{$input->getName()}' 
                                 class='{$input->getClasses()}'
                                 {$input->getMin()} {$input->getMax()} {$input->getPlaceholder()}
                                 type='{$input->getType()}' 
@@ -53,37 +53,50 @@ class FormMaterialize extends FormMaster
 
     }
 
-    protected function prepareTextarea(Textarea $input)
+    protected function prepareTextarea(TextareaInterface $input)
     {
         return "
             {$input->getBefore()}
                 <div class='input-field {$input->getWrapperClasses()}'>
                     <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                    <textarea {$input->getPlaceholder()} form='{$this->formid}' id='{$input->getID()}' class='materialize-textarea {$input->getClasses()}'
-                                name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}</textarea>
+                    <textarea {$input->getPlaceholder()} id='{$input->getID()}' class='materialize-textarea {$input->getClasses()}'
+                                name='{$input->getName()}' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}</textarea>
                 </div>
             {$input->getAfter()}
        
         ";
     }
 
-    protected function prepareSelect(Select $input)
+    protected function prepareSelect(SelectInterface $input)
     {
+        $return = "{$input->getBefore()}
+                    <div class='input-field {$input->getWrapperClasses()}'>";
+            $return .= "<select class='{$input->getClasses()}' 
+                                id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
+                                name='{$input->getName()}' {$input->getMultiple()} 
+                                size='{$input->getSize()}'>";
 
+                 $return .= "<option disabled selected>Bitte Wählen</option>";
+
+                foreach ($input->getOptions() as $value => $text) {
+                    $return .= "<option value='{$value}'>{$text}</option>";
+                }
+
+            $return .= "</select>";
+        $return .= "<label for='{$input->getID()}'>{$input->getLabel()}</label>";
+        $return .= "</div>
+            {$input->getAfter()}";
+        return $return;
     }
 
-    protected function prepareForm(Form $form)
-    {
-        // TODO: Implement prepareForm() method.
-    }
 
-    private function checkbox_switch(Input $input)
+    private function checkbox_switch(InputInterface $input)
     {
         return "
             {$input->getBefore()}
             <div class=\"switch {$input->getWrapperClasses()}\">
                 <label>
-                  <input id='{$input->getID()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$this->formid}[{$input->getName()}]' type=\"checkbox\">
+                  <input id='{$input->getID()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$input->getName()}' type=\"checkbox\">
                   <span class=\"lever\"></span>
                   {$input->getLabel()}
                 </label>
@@ -92,7 +105,7 @@ class FormMaterialize extends FormMaster
         ";
     }
 
-    private function checkbox(Input $input)
+    private function checkbox(InputInterface $input)
     {
         return "
             {$input->getBefore()}
@@ -100,20 +113,20 @@ class FormMaterialize extends FormMaster
                   <input id='{$input->getID()}' 
                   type='checkbox' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} 
                   class='{$input->getClasses()}' 
-                  name='{$this->formid}[{$input->getName()}]'>
+                  name='{$input->getName()}'>
                   <label for='{$input->getID()}'>{$input->getLabel()}</label>
               </p>
           {$input->getAfter()}
         ";
     }
 
-    private function radio(Input $input)
+    private function radio(InputInterface $input)
     {
         return "
         {$input->getBefore()}
             <p>
               <input class='{$input->getClasses()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
-              name='{$this->formid}[{$input->getName()}]' 
+              name='{$input->getName()}' 
               type=\"radio\" id='{$input->getID()}' />
               <label for='{$input->getID()}'>{$input->getLabel()}</label>
             </p>

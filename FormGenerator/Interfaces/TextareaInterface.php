@@ -3,38 +3,40 @@
  * Created by PhpStorm.
  * User: workstation
  * Date: 01.12.16
- * Time: 02:33
+ * Time: 12:29
  */
 
 namespace FormGenerator\Interfaces;
 
 
 /**
- * Interface Input
+ * Interface Textarea
  * @package FormGenerator\Interfaces
  */
-interface Input extends FormElement
+interface TextareaInterface extends FormElementInterface
 {
+
     /**
-     * @param string $type
+     * @param string $text
      * @return mixed
      */
-    public function setType(string $type);
+    function setText(string $text);
 
     /**
      * @return mixed
      */
-    public function getType();
-
-    /**
-     * @param string $value
-     * @return mixed
-     */
-    public function setValue(string $value);
+    function getText();
 
     /**
      * @return mixed
      */
-    public function getValue();
+    public function getLength();
+
+    /**
+     * @param string $length
+     * @return mixed
+     */
+    public function setLength(string $length);
+
 
 }

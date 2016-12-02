@@ -13,7 +13,7 @@ namespace FormGenerator\Inputs;
  * Class Input
  * @package FormGenerator\Inputs
  */
-class Input extends FormElement implements \FormGenerator\Interfaces\Input
+class Input extends FormElement implements \FormGenerator\Interfaces\InputInterface
 {
 
     /**
@@ -24,38 +24,67 @@ class Input extends FormElement implements \FormGenerator\Interfaces\Input
      * @var
      */
     private $type;
-
     /**
-     * @return mixed
+     * @var
      */
+    private $min;
+    /**
+     * @var
+     */
+    private $max;
+    /**
+     * @var
+     */
+    private $checked;
+
     public function getType()
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     */
     public function setType(string $type)
     {
         $this->type = $type;
     }
 
-    /**
-     * @return mixed
-     */
     public function getValue()
     {
         return $this->value;
     }
 
-    /**
-     * @param string $value
-     */
     public function setValue(string $value)
     {
         $this->value = $value;
     }
 
+    public function getMin()
+    {
+        return $this->min;
+    }
+
+    public function setMin(string $min)
+    {
+        $this->min = "min=" . $min . "";
+    }
+
+    public function getMax()
+    {
+        return $this->max;
+    }
+
+    public function setMax(string $max)
+    {
+        $this->max = "max=" . $max . "";
+    }
+
+    public function getChecked()
+    {
+        return $this->checked;
+    }
+
+    public function setChecked(string $checked)
+    {
+        $this->checked = $checked;
+    }
 
 }
