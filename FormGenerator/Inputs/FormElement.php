@@ -70,6 +70,24 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
      */
     protected $formid;
 
+    private $placeholder;
+
+    /**
+     * @return mixed
+     */
+    public function getPlaceholder()
+    {
+        return $this->placeholder;
+    }
+
+    /**
+     * @param string $placeholder
+     */
+    public function setPlaceholder(string $placeholder)
+    {
+        $this->placeholder = "placeholder='{$placeholder}'";
+    }
+
 
     /**
      * @return mixed
@@ -188,7 +206,8 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
      */
     function setBefore(string $element)
     {
-        $this->before = $element;
+        $parts = explode(".", $element);
+        $this->before = "<" . $parts[0] . " class=" . $parts[1] . ">";
     }
 
     /**
@@ -196,7 +215,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
      */
     function setAfter(string $element)
     {
-        $this->after = $element;
+        $this->after = "</" . $element . ">";
     }
 
 

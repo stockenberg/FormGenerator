@@ -40,7 +40,7 @@ class FormMaterialize extends FormMaster
                         <label for='{$input->getID()}'>{$input->getLabel()}</label>
                         <input form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
                                 class='{$input->getClasses()}'
-                                {$input->getMin()} {$input->getMax()}
+                                {$input->getMin()} {$input->getMax()} {$input->getPlaceholder()}
                                 type='{$input->getType()}' 
                                 id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
                                 value='{$input->getValue()}' />
@@ -59,7 +59,7 @@ class FormMaterialize extends FormMaster
             {$input->getBefore()}
                 <div class='input-field {$input->getWrapperClasses()}'>
                     <label for='{$input->getID()}'>{$input->getLabel()}</label>
-                    <textarea form='{$this->formid}' id='{$input->getID()}' class='materialize-textarea {$input->getClasses()}'
+                    <textarea {$input->getPlaceholder()} form='{$this->formid}' id='{$input->getID()}' class='materialize-textarea {$input->getClasses()}'
                                 name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}</textarea>
                 </div>
             {$input->getAfter()}
@@ -83,7 +83,7 @@ class FormMaterialize extends FormMaster
             {$input->getBefore()}
             <div class=\"switch {$input->getWrapperClasses()}\">
                 <label>
-                  <input id='{$input->getID()}' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$this->formid}[{$input->getName()}]' type=\"checkbox\">
+                  <input id='{$input->getID()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$this->formid}[{$input->getName()}]' type=\"checkbox\">
                   <span class=\"lever\"></span>
                   {$input->getLabel()}
                 </label>

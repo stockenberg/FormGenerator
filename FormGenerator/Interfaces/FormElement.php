@@ -15,6 +15,19 @@ namespace FormGenerator\Interfaces;
  */
 interface FormElement
 {
+
+    /**
+     * @param string $placeholder
+     * @return mixed
+     */
+    function setPlaceholder(string $placeholder);
+
+    /**
+     * @param $placeholder
+     * @return mixed
+     */
+    function getPlaceholder();
+
     /**
      * @param string $name
      * @return mixed

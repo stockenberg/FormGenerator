@@ -11,26 +11,27 @@ $formFields = new \FormGenerator\Views\FormMaterialize("Register");
 
 $config = [
     [
-        "before" => "<div class='row'>",
+        "before" => "div.row",
         "label" => "Firstname",
         "element" => "Input",
         "classes" => "validate",
-        "wrapperClasses" => "col m5 l5 s5",
+        "placeholder" => "mymessage",
+        "wrapperClasses" => "row col m5 l5 s5",
         "type" => "text"
     ],
     [
         "label" => "Firstname",
         "element" => "Input",
         "classes" => "validate",
-        "wrapperClasses" => "col m5 l5 s5 push-l2",
+        "wrapperClasses" => "row col m5 l5 s5 push-l2",
         "type" => "text",
-        "after" => "</div>",
+        "after" => "div",
     ],
     [
         "label" => "E-Mail-Adresse",
         "element" => "Input",
         "classes" => "validate",
-        "wrapperClasses" => "col m12 l12 s12 ",
+        "wrapperClasses" => "row col m12 l12 s12 ",
         "type" => "email",
     ],
     [
@@ -40,7 +41,7 @@ $config = [
         "wrapperClasses" => "row col m12 l12 s12"
     ],
     [
-        "label" => "Ach akzeptiere die <a href='agb'>AGB</a>",
+        "label" => "Ich akzeptiere die <a href='agb'>AGB</a>",
         "element" => "Input",
         "type" => "checkbox-switch",
         "ID" => "agb",
