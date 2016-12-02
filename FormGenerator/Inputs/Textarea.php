@@ -13,7 +13,7 @@ class Textarea extends FormElement implements \FormGenerator\Interfaces\Textarea
 {
 
     private $text;
-
+    private $length;
     /**
      * @return mixed
      */
@@ -29,6 +29,24 @@ class Textarea extends FormElement implements \FormGenerator\Interfaces\Textarea
     {
         $this->text = $text;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    /**
+     * @param mixed $length
+     */
+    public function setLength(string $length)
+    {
+        $this->length = $length;
+    }
+
+
 
 
 }

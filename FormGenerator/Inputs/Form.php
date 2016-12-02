@@ -9,11 +9,24 @@
 namespace FormGenerator\Inputs;
 
 
+/**
+ * Class Form
+ * @package FormGenerator\Inputs
+ */
 class Form extends FormElement implements \FormGenerator\Interfaces\Form
 {
 
+    /**
+     * @var
+     */
     private $action;
+    /**
+     * @var
+     */
     private $enctype;
+    /**
+     * @var
+     */
     private $method;
 
     /**
@@ -25,7 +38,7 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
     }
 
     /**
-     * @param mixed $action
+     * @param string $action
      */
     public function setAction(string $action)
     {
@@ -33,7 +46,7 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
     public function getEnctype()
     {
@@ -41,7 +54,7 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
     }
 
     /**
-     * @param mixed $enctype
+     * @param string $enctype
      */
     public function setEnctype(string $enctype)
     {
@@ -57,7 +70,7 @@ class Form extends FormElement implements \FormGenerator\Interfaces\Form
     }
 
     /**
-     * @param mixed $method
+     * @param string $method
      */
     public function setMethod(string $method)
     {

@@ -9,19 +9,67 @@
 namespace FormGenerator\Inputs;
 
 
+/**
+ * Class FormElement
+ * @package FormGenerator\Inputs
+ */
 abstract class FormElement implements \FormGenerator\Interfaces\FormElement
 {
 
+    /**
+     * @var
+     */
     private $name;
+    /**
+     * @var
+     */
     private $ID;
-    private $classes = [];
+    /**
+     * @var
+     */
+    private $classes;
+    /**
+     * @var
+     */
     private $label;
+    /**
+     * @var
+     */
     private $disabled;
+    /**
+     * @var
+     */
     private $required;
-    private $wrapperClasses = [];
-    protected $formid;
+    /**
+     * @var
+     */
+    private $wrapperClasses;
+    /**
+     * @var
+     */
     private $after;
+    /**
+     * @var
+     */
     private $before;
+    /**
+     * @var
+     */
+    private $checked;
+    /**
+     * @var
+     */
+    private $min;
+    /**
+     * @var
+     */
+    private $max;
+
+    /**
+     * @var
+     */
+    protected $formid;
+
 
     /**
      * @return mixed
@@ -32,7 +80,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
     public function setName(string $name)
     {
@@ -48,7 +96,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $ID
+     * @param string $ID
      */
     public function setID(string $ID)
     {
@@ -56,17 +104,17 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @return array
+     * @return mixed
      */
     public function getClasses()
     {
-        return implode(" ", $this->classes);
+        return $this->classes;
     }
 
     /**
-     * @param array $classes
+     * @param string $classes
      */
-    public function setClasses(array $classes)
+    public function setClasses(string $classes)
     {
         $this->classes = $classes;
     }
@@ -80,7 +128,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $label
+     * @param string $label
      */
     public function setLabel(string $label)
     {
@@ -96,7 +144,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $disabled
+     * @param string $disabled
      */
     public function setDisabled(string $disabled)
     {
@@ -112,7 +160,7 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $required
+     * @param string $required
      */
     public function setRequired(string $required)
     {
@@ -120,37 +168,49 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @return array
+     * @return mixed
      */
     public function getWrapperClasses()
     {
-        return implode(" ", $this->wrapperClasses);
+        return $this->wrapperClasses;
     }
 
     /**
-     * @param array $wrapperClasses
+     * @param string $wrapperClasses
      */
-    public function setWrapperClasses(array $wrapperClasses)
+    public function setWrapperClasses(string $wrapperClasses)
     {
         $this->wrapperClasses = $wrapperClasses;
     }
 
+    /**
+     * @param string $element
+     */
     function setBefore(string $element)
     {
         $this->before = $element;
     }
 
+    /**
+     * @param string $element
+     */
     function setAfter(string $element)
     {
         $this->after = $element;
     }
 
 
+    /**
+     * @return mixed
+     */
     function getAfter()
     {
         return $this->after;
     }
 
+    /**
+     * @return mixed
+     */
     function getBefore()
     {
         return $this->before;
@@ -165,12 +225,63 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     }
 
     /**
-     * @param mixed $formid
+     * @param $formid
      */
     public function setFormid($formid)
     {
         $this->formid = $formid;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getChecked()
+    {
+        return $this->checked;
+    }
+
+    /**
+     * @param string $checked
+     */
+    public function setChecked(string $checked)
+    {
+        $this->checked = $checked;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMin()
+    {
+        return $this->min;
+    }
+
+    /**
+     * @param string $min
+     */
+    public function setMin(string $min)
+    {
+        $this->min = "min=" . $min . "";
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMax()
+    {
+        return $this->max;
+    }
+
+    /**
+     * @param string $max
+     */
+    public function setMax(string $max)
+    {
+        $this->max = "max=" . $max . "";
+    }
+
+
+
 
 
 }

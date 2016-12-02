@@ -9,10 +9,23 @@
 namespace FormGenerator\Inputs;
 
 
+/**
+ * Class Select
+ * @package FormGenerator\Inputs
+ */
 class Select extends FormElement implements \FormGenerator\Interfaces\Select
 {
+    /**
+     * @var
+     */
     private $multiple;
+    /**
+     * @var
+     */
     private $size;
+    /**
+     * @var array
+     */
     private $options = [];
 
     /**
@@ -41,7 +54,7 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
     }
 
     /**
-     * @param mixed $multiple
+     * @param $multiple
      */
     public function setMultiple($multiple)
     {
@@ -57,7 +70,7 @@ class Select extends FormElement implements \FormGenerator\Interfaces\Select
     }
 
     /**
-     * @param mixed $size
+     * @param string $size
      */
     public function setSize(string $size)
     {

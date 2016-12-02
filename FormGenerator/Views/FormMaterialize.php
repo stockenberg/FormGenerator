@@ -21,12 +21,31 @@ class FormMaterialize extends FormMaster
     {
 
         switch ($input->getType()) {
+            case "checkbox-slider":
+                return $this->checkbox_slider($input);
+                break;
+
             case "checkbox":
-                return $this->switch($input);
+                return $this->checkbox($input);
                 break;
 
             case "radio":
                 return $this->radio($input);
+                break;
+
+            default:
+                return "
+                {$input->getBefore()}
+                    <div class='{$input->getWrapperClasses()}'>
+                        <label for='{$input->getID()}'>{$input->getLabel()}</label>
+                        <input form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
+                                class='input-field {$input->getClasses()}'
+                                {$input->getMin()} {$input->getMax()}
+                                type='{$input->getType()}' 
+                                id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
+                                value='{$input->getValue()}' />
+                    </div>
+                {$input->getAfter()}";
                 break;
 
 
@@ -49,25 +68,47 @@ class FormMaterialize extends FormMaster
         // TODO: Implement prepareForm() method.
     }
 
-    private function switch(Input $input)
+    private function checkbox_slider(Input $input)
     {
         return "
-            <div class=\"switch {$input->getClasses()} \">
+            {$input->getBefore()}
+            <div class=\"switch {$input->getWrapperClasses()}\">
                 <label>
-                  <input id='{$input->getID()}' name='{$this->formid}[{$input->getName()}]' type=\"checkbox\">
+                  <input id='{$input->getID()}' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$this->formid}[{$input->getName()}]' type=\"checkbox\">
                   <span class=\"lever\"></span>
                   {$input->getLabel()}
                 </label>
               </div>
+          {$input->getAfter()}
         ";
     }
 
-    private function radio(Input $input){
+    private function checkbox(Input $input)
+    {
         return "
+            {$input->getBefore()}
+            <p class=\"{$input->getWrapperClasses()}\">
+                  <input id='{$input->getID()}' 
+                  type='checkbox' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} 
+                  class='{$input->getClasses()}' 
+                  name='{$this->formid}[{$input->getName()}]'>
+                  <label for='{$input->getID()}'>{$input->getLabel()}</label>
+              </p>
+          {$input->getAfter()}
+        ";
+    }
+
+    private function radio(Input $input)
+    {
+        return "
+        {$input->getBefore()}
             <p>
-              <input name='{$this->formid}[{$input->getName()}]' type=\"radio\" id='{$input->getID()}' />
+              <input class='{$input->getClasses()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
+              name='{$this->formid}[{$input->getName()}]' 
+              type=\"radio\" id='{$input->getID()}' />
               <label for='{$input->getID()}'>{$input->getLabel()}</label>
             </p>
+        {$input->getAfter()}
         ";
     }
 

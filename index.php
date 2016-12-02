@@ -11,27 +11,9 @@ $formFields = new \FormGenerator\Views\FormMaterialize("Register");
 
 $config = [
     [
-        "label" => "Vorname",
-        "name" => "firstname",
-        "id" => "firstname",
-        "type" => "checkbox",
+        "value" => "Hallo",
         "element" => "Input"
     ],
-    [
-        "label" => "PayPal",
-        "name" => "payment",
-        "id" => "paypal",
-        "type" => "radio",
-        "element" => "Input"
-    ],
-    [
-        "label" => "Sofort",
-        "name" => "payment",
-        "id" => "sofort",
-        "type" => "radio",
-        "element" => "Input"
-    ]
-
 ];
 
 $formFields->setConfig($config);
@@ -50,9 +32,13 @@ $formFields->setConfig($config);
     <title>Document</title>
 </head>
 <body>
-
+<br/><br/><br/><br/>
+<div class="row">
+    <form action="">
 <?= $formFields->Output(); ?>
-
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </body>
 </html>

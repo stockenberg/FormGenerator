@@ -9,10 +9,20 @@
 namespace FormGenerator\Inputs;
 
 
+/**
+ * Class Input
+ * @package FormGenerator\Inputs
+ */
 class Input extends FormElement implements \FormGenerator\Interfaces\Input
 {
 
+    /**
+     * @var
+     */
     private $value;
+    /**
+     * @var
+     */
     private $type;
 
     /**
@@ -24,7 +34,7 @@ class Input extends FormElement implements \FormGenerator\Interfaces\Input
     }
 
     /**
-     * @param mixed $type
+     * @param string $type
      */
     public function setType(string $type)
     {
@@ -40,7 +50,7 @@ class Input extends FormElement implements \FormGenerator\Interfaces\Input
     }
 
     /**
-     * @param mixed $value
+     * @param string $value
      */
     public function setValue(string $value)
     {

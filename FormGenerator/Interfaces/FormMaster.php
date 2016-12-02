@@ -9,12 +9,22 @@
 namespace FormGenerator\Interfaces;
 
 
+/**
+ * Interface FormMaster
+ * @package FormGenerator\Interfaces
+ */
 interface FormMaster
 {
 
+    /**
+     * @param array $config
+     * @return mixed
+     */
     function setConfig(array $config);
 
+    /**
+     * @return mixed
+     */
     function Output();
-
 
 }

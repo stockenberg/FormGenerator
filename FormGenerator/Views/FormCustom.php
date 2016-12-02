@@ -33,42 +33,42 @@ class FormCustom extends FormMaster
         ";
     }
 
-    protected function prepareTextarea(Textarea $textarea)
+    protected function prepareTextarea(Textarea $input)
     {
         return "
-            {$textarea->getBefore()}
-                <div class='{$textarea->getWrapperClasses()}'>
-                    <label for='{$textarea->getID()}'>{$textarea->getLabel()}</label>
-                    <textarea form='{$this->formid}' id='{$textarea->getID()}' 
-                                name='{$this->formid}[{$textarea->getName()}]' {$textarea->getDisabled()} {$textarea->getRequired()}>{$textarea->getText()}
+            {$input->getBefore()}
+                <div class='{$input->getWrapperClasses()}'>
+                    <label for='{$input->getID()}'>{$input->getLabel()}</label>
+                    <textarea form='{$this->formid}' id='{$input->getID()}' 
+                                name='{$this->formid}[{$input->getName()}]' {$input->getDisabled()} {$input->getRequired()}>{$input->getText()}
                     </textarea>
                 </div>
-            {$textarea->getAfter()}
+            {$input->getAfter()}
         ";
     }
 
-    protected function prepareSelect(Select $select)
+    protected function prepareSelect(Select $input)
     {
-        $return = "{$select->getBefore()}<div class='{$select->getWrapperClasses()}'>";
-            $return .= "<select form='{$this->formid}' class='{$select->getClasses()}' 
-                                id='{$select->getID()}' {$select->getRequired()} {$select->getDisabled()} name='{$this->formid}[{$select->getName()}]' {$select->getMultiple()} 
-                                size='{$select->getSize()}'>";
+        $return = "{$input->getBefore()}<div class='{$input->getWrapperClasses()}'>";
+            $return .= "<select form='{$this->formid}' class='{$input->getClasses()}' 
+                                id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} name='{$this->formid}[{$input->getName()}]' {$input->getMultiple()} 
+                                size='{$input->getSize()}'>";
                 $return .= "<option disabled selected>Bitte Wählen</option>";
-                foreach ($select->getOptions() as $value => $text) {
+                foreach ($input->getOptions() as $value => $text) {
                     $return .= "<option value='{$value}'>{$text}</option>";
                 }
             $return .= "</select>";
-        $return .= "</div>{$select->getAfter()}";
+        $return .= "</div>{$input->getAfter()}";
 
         return $return;
 
     }
 
-    protected function prepareForm(Form $form)
+    protected function prepareForm(Form $input)
     {
-        return "<form action='{$form->getAction()}' 
-                        method='{$form->getMethod()}' 
-                        enctype='{$form->getEnctype()}' id='{$this->formid}' class='{$form->getClasses()}'>
+        return "<form action='{$input->getAction()}' 
+                        method='{$input->getMethod()}' 
+                        enctype='{$input->getEnctype()}' id='{$this->formid}' class='{$input->getClasses()}'>
                 </form>";
     }
 
