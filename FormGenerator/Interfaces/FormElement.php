@@ -40,4 +40,11 @@ interface FormElement
 
     function getWrapperClasses();
 
+    function setBefore(string $element);
+
+    function setAfter(string $element);
+
+    function getBefore();
+
+    function getAfter();
 }

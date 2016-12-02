@@ -20,36 +20,36 @@ class FormCustom extends FormMaster
 
     protected function prepareInput(Input $input)
     {
-        return "<div class='{$input->getWrapperClasses()}'>
+        return "{$input->getBefore()}<div class='{$input->getWrapperClasses()}'>
                     <label for='{$input->getID()}'>{$input->getLabel()}</label>
                     <input form='{$this->formid}' name='{$this->formid}[{$input->getName()}]' 
                             class='{$input->getClasses()}'
                             type='{$input->getType()}' 
                             id='{$input->getID()}' {$input->getRequired()} {$input->getDisabled()} 
                             value='{$input->getValue()}' />
-                </div>
+                </div>{$input->getAfter()}
         ";
     }
 
     protected function prepareTextarea(Textarea $textarea)
     {
-        return "<div class='{$textarea->getWrapperClasses()}'>
+        return "{$textarea->getBefore()}<div class='{$textarea->getWrapperClasses()}'>
                     <label for='{$textarea->getID()}'>{$textarea->getLabel()}</label>
                     <textarea form='{$this->formid}' id='{$textarea->getID()}' name='{$this->formid}[{$textarea->getName()}]' {$textarea->getDisabled()} {$textarea->getRequired()}>{$textarea->getText()}</textarea>
-                </div>
+                </div>{$textarea->getAfter()}
         ";
     }
 
     protected function prepareSelect(Select $select)
     {
-        $return = "<div class='{$select->getWrapperClasses()}'>";
+        $return = "{$select->getBefore()}<div class='{$select->getWrapperClasses()}'>";
         $return .= "<select form='{$this->formid}' class='{$select->getClasses()}' id='{$select->getID()}' {$select->getRequired()} {$select->getDisabled()} name='{$this->formid}[{$select->getName()}]' {$select->getMultiple()} size='{$select->getSize()}'>";
         $return .= "<option disabled selected>Bitte Wählen</option>";
         foreach ($select->getOptions() as $value => $text) {
             $return .= "<option value='{$value}'>{$text}</option>";
         }
         $return .= "</select>";
-        $return .= "</div>";
+        $return .= "</div>{$select->getAfter()}";
         return $return;
 
     }

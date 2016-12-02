@@ -20,6 +20,8 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     private $required;
     private $wrapperClasses = [];
     protected $formid;
+    private $after;
+    private $before;
 
     /**
      * @return mixed
@@ -131,6 +133,43 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElement
     public function setWrapperClasses(array $wrapperClasses)
     {
         $this->wrapperClasses = $wrapperClasses;
+    }
+
+    function setBefore(string $element)
+    {
+        $this->before = $element;
+    }
+
+    function setAfter(string $element)
+    {
+        $this->after = $element;
+    }
+
+
+    function getAfter()
+    {
+        return $this->after;
+    }
+
+    function getBefore()
+    {
+        return $this->before;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFormid()
+    {
+        return $this->formid;
+    }
+
+    /**
+     * @param mixed $formid
+     */
+    public function setFormid($formid)
+    {
+        $this->formid = $formid;
     }
 
 

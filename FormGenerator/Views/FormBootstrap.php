@@ -21,7 +21,6 @@ class FormBootstrap extends FormMaster
 
     protected function prepareInput(Input $input)
     {
-
         // TODO: Implement prepareInput() method.
     }
 
