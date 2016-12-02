@@ -31,6 +31,12 @@ class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
      * @var string
      */
 
+
+    public function __set($name, $value)
+    {
+        $this->config[$this->count][$name] = $value;
+    }
+
     /**
      * Expects an two dimensional array, each sub-array represents an form-element
      *
@@ -55,6 +61,8 @@ class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
      * - min (for input type range)
      * - max (for input type range)
      * - checked
+     * - labelBefore
+     * - labelAfter
      *
      * # Select Specific
      * - multiple
@@ -71,12 +79,6 @@ class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
      * - enctype
      *
      */
-
-    public function __set($name, $value)
-    {
-        $this->config[$this->count][$name] = $value;
-    }
-
     public function addElement(string $element){
         $this->count++;
         $this->config[$this->count]["element"] = $element;

@@ -25,17 +25,4 @@ class Textarea extends FormElement implements \FormGenerator\Interfaces\Textarea
         $this->text = $text;
     }
 
-    public function getLength()
-    {
-        return $this->length;
-    }
-
-    public function setLength(string $length)
-    {
-        $this->length = $length;
-    }
-
-
-
-
 }

@@ -53,4 +53,14 @@ interface SelectInterface extends FormElementInterface
      * @return mixed
      */
     public function setSize(string $size);
+
+    /**
+     * @return mixed
+     */
+    public function getIcon();
+
+    /**
+     * @param mixed $icon
+     */
+    public function setIcon(string $icon);
 }

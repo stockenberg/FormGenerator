@@ -37,6 +37,10 @@ class Input extends FormElement implements \FormGenerator\Interfaces\InputInterf
      */
     private $checked;
 
+    private $labelBefore;
+
+    private $labelAfter;
+
     public function getType()
     {
         return $this->type;
@@ -86,5 +90,27 @@ class Input extends FormElement implements \FormGenerator\Interfaces\InputInterf
     {
         $this->checked = $checked;
     }
+
+    public function getLabelBefore()
+    {
+        return $this->labelBefore;
+    }
+
+    public function setLabelBefore(string $labelBefore)
+    {
+        $this->labelBefore = $labelBefore;
+    }
+
+    public function getLabelAfter()
+    {
+        return $this->labelAfter;
+    }
+
+    public function setLabelAfter(string $labelAfter)
+    {
+        $this->labelAfter = $labelAfter;
+    }
+
+
 
 }

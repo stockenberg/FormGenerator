@@ -27,16 +27,5 @@ interface TextareaInterface extends FormElementInterface
      */
     function getText();
 
-    /**
-     * @return mixed
-     */
-    public function getLength();
-
-    /**
-     * @param string $length
-     * @return mixed
-     */
-    public function setLength(string $length);
-
 
 }

@@ -55,11 +55,21 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElementInter
     /**
      * @var
      */
-    protected $formid;
+    private $placeholder;
     /**
      * @var
      */
-    private $placeholder;
+    private $variant;
+
+    private $headline;
+
+    private $length;
+
+    private $error;
+
+    private $success;
+
+    private $iconPrefix;
 
     public function getPlaceholder()
     {
@@ -160,6 +170,76 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElementInter
     {
         return $this->before;
     }
+
+    public function getVariant()
+    {
+        return $this->variant;
+    }
+
+    public function setVariant(string $variant)
+    {
+        $this->variant = $variant;
+    }
+
+    public function getHeadline()
+    {
+        return $this->headline;
+    }
+
+    public function setHeadline(string $headline)
+    {
+        $this->headline = $headline;
+    }
+
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    public function setLength(string $length)
+    {
+        $this->length = "length='{$length}'";
+    }
+
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    public function setError(string $error)
+    {
+        $this->error = "data-error='" . $error . "'";
+    }
+
+    public function getSuccess()
+    {
+        return $this->success;
+    }
+
+    public function setSuccess(string $success)
+    {
+        $this->success = "data-success='" . $success . "'";
+    }
+
+    public function getIconPrefix()
+    {
+        return $this->iconPrefix;
+    }
+
+    public function setIconPrefix(string $iconPrefix)
+    {
+        $this->iconPrefix = "<i class='material-icons prefix'>{$iconPrefix}</i>";;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

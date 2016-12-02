@@ -68,4 +68,13 @@ interface InputInterface extends FormElementInterface
      */
     public function setMax(string $max);
 
+    public function getLabelBefore();
+
+    public function setLabelBefore(string $labelBefore);
+
+    public function setLabelAfter(string $labelAfter);
+
+    public function getLabelAfter();
+
+
 }
