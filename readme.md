@@ -1,3 +1,4 @@
+<pre>
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
 <ul>
@@ -310,3 +311,4 @@ $form->form = "end";
 
 <h5>Rendering</h5>
 $form->Output();
+</pre>
