@@ -1,22 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: workstation
- * Date: 01.12.16
- * Time: 00:27
- */
+
 require "vendor/autoload.php";
 
 $form = new \FormGenerator\Views\FormMaterialize();
 
 $form->addElement("Form");
 $form->form = "start";
-$form->action = "#";
+$form->action = "<h5>";
 $form->method = "post";
 $form->id = "Register";
 
 $form->addElement("Select");
-$form->headline = "&lt;h4&gt;Select&lt;/h4&gt;";
+$form->headline = "<h4>Select</h4>";
 $form->name = "Register[anrede]";
 $form->before = "<div class='row'>";
 $form->classes = "icons";
@@ -90,7 +85,7 @@ $form->options = [
 ];
 
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Input&lt;/h4&gt;";
+$form->headline = "<h4>Input</h4>";
 $form->type = "text";
 $form->label = "Normal Textbox";
 $form->classes = "validate";
@@ -151,7 +146,7 @@ $form->classes = "validate";
 $form->id = "password";
 
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Radio / Checkbox&lt;/h4&gt;";
+$form->headline = "<h4>Radio / Checkbox</h4>";
 $form->type = "switch";
 $form->labelBefore = "off";
 $form->labelAfter = "on";
@@ -179,7 +174,7 @@ $form->label = "checkbox";
 $form->id = "check";
 
 $form->addElement("Textarea");
-$form->headline = "&lt;h4&gt;Textareas&lt;/h4&gt;";
+$form->headline = "<h4>Teaxtarea</h4>";
 $form->label = "Message";
 $form->id = "message";
 
@@ -191,7 +186,7 @@ $form->classes = "validate";
 $form->length = "120";
 
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Buttons&lt;/h4&gt;";
+$form->headline = "<h4>Buttons</h4>";
 $form->label = "File Upload";
 $form->id = "file";
 $form->type = "file";
@@ -237,6 +232,68 @@ $form->form = "end";
 
     <pre style="padding: 50px; width: 40%; position: fixed; left: 0; top: 0; height: 100%; overflow-y: scroll"
          class="sh_php">
+<h4>Documentation</h4>
+<ul>
+<li><h5>Global</h5></li>
+<li>name</li>
+<li>ID</li>
+<li>classes "first scnd third ..."</li>
+<li>wrapperClasses "first scnd third ..."</li>
+<li>label</li>
+<li>disabled</li>
+<li>required</li>
+<li>after "htmlmarkup will be inserted after this element"</li>
+<li>before "htmlmarkup will be inserted before this element"</li>
+<li>checked</li>
+<li>placeholder</li>
+
+<li><h5>Input Specific</h5></li>
+<li>type</li>
+<li>value</li>
+<li>min (for input type range)</li>
+<li>max (for input type range)</li>
+<li>checked</li>
+<li>labelBefore (Just for Materialize Switch)</li>
+<li>labelAfter (Just for Materialize Switch)</li>
+
+<li><h5>Select Specific</h5></li>
+<li>multiple</li>
+<li>size</li>
+<li>options array key => value</li>
+
+<li><h5>Textarea Specific</h5></li>
+<li>text</li>
+<li>length</li>
+
+<li><h5>Form Specific</h5></li>
+<li>action</li>
+<li>method</li>
+<li>enctype</li>
+</ul>
+
+<h3>Min Setup</h3>
+<h4>Get Right Library</h4>
+$form = new \FormGenerator\Views\FormMaterialize();
+<h4>Start Form</h4>
+$form->addElement("Form");
+$form->form = "start";
+$form->action = "#";
+$form->method = "post";
+$form->id = "Register";
+<h4>Add Element</h4>
+$form->addElement("Input");
+$form->headline = "&lt;h4&gt;Input&lt;/h4&gt;";
+$form->type = "text";
+$form->label = "Normal Textbox";
+$form->classes = "validate";
+$form->id = "normal";
+<h4>Close Formtag</h4>
+$form->addElement("Form");
+$form->form = "end";
+<h4>Rendering</h4>
+$form->Output();
+<hr>
+<h3>Full Setup</h3>
 <h4>Get Right Library</h4>
 $form = new \FormGenerator\Views\FormMaterialize();
 <h4>Start Form</h4>
