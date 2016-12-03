@@ -1,4 +1,10 @@
 <pre>
+<h4>Composer Autoload</h4>
+"autoload": {
+    "psr-4": {
+      "FormGenerator\\": "FormGenerator/"
+    }
+  }
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
 <h5><a href="http://g.mstockenberg.de">Demo</a></h5>
