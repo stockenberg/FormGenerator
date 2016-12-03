@@ -18,10 +18,9 @@ use FormGenerator\Interfaces\TextareaInterface;
  * Class FormMaster
  * @package FormGenerator\Inputs
  */
-class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
+class FormMaster extends Presets implements \FormGenerator\Interfaces\FormMasterInterface
 {
-    protected $config = array();
-    private $count = -1;
+
 
     /**
      * @var
@@ -36,6 +35,7 @@ class FormMaster implements \FormGenerator\Interfaces\FormMasterInterface
     {
         $this->config[$this->count][$name] = $value;
     }
+
 
     /**
      * Expects an two dimensional array, each sub-array represents an form-element

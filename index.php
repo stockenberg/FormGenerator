@@ -244,8 +244,11 @@ m.S(t)
 FormGenerator by Marten Stockenberg
 GNU General Public License v3.0
 <br />
-Styles, JS and Form Components - Copyright 2014-2016 Materialize
+Styles, JS and Form Components
+Copyright 2014-2016 Materialize
 http://materializecss.com/
+<br />
+
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
 <ul>
