@@ -160,21 +160,12 @@ class FormMaterialize extends FormMaster
                 $return .= "<option disabled selected>Bitte Wählen</option>";
 
                 foreach ($input->getOptions() as $value => $option) {
-                    if (is_array($option)) {
-                        foreach ($option as $key => $val) {
-                            if ($key == "value") {
-                                $text = $val;
-                            }
-                            if ($key == "icon") {
-                                $icon = "data-icon='". $val . "'";
-                            }
-                            if ($key == "classes") {
-                                $iconClass = $val;
-                            }
-                        }
-                    }else{
-                        $text = $option;
-                    }
+                    $text = (is_array($option) && array_key_exists("value", $option)) ? $option["value"] : $option;
+
+                    $icon = (is_array($option) && array_key_exists("icon", $option)) ? "data-icon='". $option["icon"] . "'" : "";
+
+                    $iconClass = (is_array($option) && array_key_exists("classes", $option)) ? $option["classes"] : "";
+
                     $return .= "<option class='{$iconClass}' {$icon} value='{$value}'>{$text}</option>";
                 }
 
@@ -224,7 +215,6 @@ class FormMaterialize extends FormMaster
                   type='checkbox' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
                   class='{$input->getClasses()}' 
                   name='{$input->getName()}' value='{$input->getValue()}'>
-                  
                   {$labelAfter}
               </p>
           {$input->getAfter()}

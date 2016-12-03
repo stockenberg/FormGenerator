@@ -20,7 +20,7 @@ $form->label = "Select with Icons left";
 $form->options = [
     "key" => [
         "value" => "Text",
-        "icon" => "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+        "icon" => "picture-95970-1460131169.png",
         "classes" => "left"
     ],
 
