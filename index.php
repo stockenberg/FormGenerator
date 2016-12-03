@@ -222,17 +222,26 @@ $form->form = "end";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="syntax.css">
     <script src="syntaxhighlighter.js"></script>
-    <title>Document</title>
+    <title>FormGen Materialize CSS - Formular Example</title>
 </head>
 <body onload="sh_highlightDocument();">
+
 <div class="row">
     <div style="padding: 50px; width: 60%; position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll">
+        <div>
+            <pre style="font-family: 'Courier New'; font-size: 36px; font-weight: bold;">
+m.S(t)
+ {<span style="font-size: 0.9em;">{web.</span><span style="color: darkorange; font-size: 0.9em;">Development</span><span
+            style="font-size: 0.9em;">}</span>}
+            </pre>
+        </div>
         <?= $form->Output(); ?>
     </div>
 
     <pre style="padding: 50px; width: 40%; position: fixed; left: 0; top: 0; height: 100%; overflow-y: scroll"
          class="sh_php">
 <h4>Documentation</h4>
+Questions? -> MStockenberg [AT] gmail [DOT] com
 <ul>
 <li><h5>Global</h5></li>
 <li>name</li>
@@ -272,39 +281,46 @@ $form->form = "end";
 </ul>
 
 <h3>Min Setup</h3>
-<h4>Get Right Library</h4>
+<h5>Get Right Library</h5>
 $form = new \FormGenerator\Views\FormMaterialize();
-<h4>Start Form</h4>
+<h5>Start Form</h5>
 $form->addElement("Form");
 $form->form = "start";
 $form->action = "#";
 $form->method = "post";
 $form->id = "Register";
-<h4>Add Element</h4>
+<h5>Add Element</h5>
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Input&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Input&lt;/h5&gt;";
 $form->type = "text";
 $form->label = "Normal Textbox";
 $form->classes = "validate";
 $form->id = "normal";
-<h4>Close Formtag</h4>
+<h5>Close Formtag</h5>
 $form->addElement("Form");
 $form->form = "end";
-<h4>Rendering</h4>
+<h5>Rendering</h5>
 $form->Output();
-<hr>
-<h3>Full Setup</h3>
-<h4>Get Right Library</h4>
+
+<h3>Full Setup </h3>
+<h5>(see right side)</h5>
+
+<h5>Get Right Library</h5>
+
 $form = new \FormGenerator\Views\FormMaterialize();
-<h4>Start Form</h4>
+
+<h5>Start Form</h5>
+
 $form->addElement("Form");
 $form->form = "start";
 $form->action = "#";
 $form->method = "post";
 $form->id = "Register";
-<h4>Selectlists</h4>
+
+<h5>Selectlists</h5>
+
 $form->addElement("Select");
-$form->headline = "&lt;h4&gt;Select&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Select&lt;/h5&gt;";
 $form->name = "Register[anrede]";
 $form->before = "&lt;div class='row'&gt;";
 $form->classes = "icons";
@@ -318,7 +334,7 @@ $form->options = [
     ],
 
 ];
-<hr>
+
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->classes = "icons";
@@ -331,7 +347,7 @@ $form->options = [
         "classes" => "circle"
     ],
 ];
-<hr>
+
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->wrapperClasses = "col s4 m4 l4";
@@ -340,7 +356,7 @@ $form->options = [
     "herr" => "Herr",
     "frau" => "Frau"
 ];
-<hr>
+
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->classes = "validate";
@@ -351,7 +367,7 @@ $form->options = [
     "herr" => "Herr",
     "frau" => "Frau"
 ];
-<hr>
+
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->wrapperClasses = "col s4 m4 l4";
@@ -364,7 +380,7 @@ $form->options = [
         "frau" => "Frau"
     ]
 ];
-<hr>
+
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->label = "Browser Default";
@@ -376,35 +392,37 @@ $form->options = [
     "herr" => "Herr",
     "frau" => "Frau"
 ];
-<h4>Input</h4>
+
+<h5>Input</h5>
+
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Input&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Input&lt;/h5&gt;";
 $form->type = "text";
 $form->label = "Normal Textbox";
 $form->classes = "validate";
 $form->id = "normal";
-<hr>
+
 $form->addElement("Input");
 $form->type = "text";
 $form->label = "Account Textbox";
 $form->classes = "validate";
 $form->iconPrefix = "account_circle";
 $form->id = "normal";
-<hr>
+
 $form->addElement("Input");
 $form->type = "text";
 $form->label = "Autocomplete";
 $form->classes = "validate autocomplete";
 $form->iconPrefix = "textsms";
 $form->id = "autocomplete";
-<hr>
+
 $form->addElement("Input");
 $form->type = "text";
 $form->label = "Phone Textbox";
 $form->classes = "validate";
 $form->iconPrefix = "phone";
 $form->id = "normal";
-<hr>
+
 $form->addElement("Input");
 $form->before = "&lt;p style='display: inline-block'>Das ist eine inline Textbox&lt;/p&gt;";
 $form->type = "text";
@@ -412,69 +430,73 @@ $form->label = "Inline Textbox";
 $form->classes = "validate";
 $form->wrapperClasses = "inline";
 $form->id = "normal";
-<hr>
+
 $form->addElement("Input");
 $form->type = "email";
 $form->label = "E-Mail";
 $form->classes = "validate";
 $form->error = "Falsch ausgefüllt";
 $form->success = "Erfolg!";
-<hr>
+
 $form->addElement("Input");
 $form->type = "date";
 $form->label = "Date";
 $form->classes = "datepicker";
-<hr>
+
 $form->addElement("Input");
 $form->type = "text";
 $form->label = "Text with Length Count";
 $form->classes = "validate";
 $form->length = "120";
 $form->id = "length";
-<hr>
+
 $form->addElement("Input");
 $form->type = "password";
 $form->label = "Password";
 $form->classes = "validate";
 $form->id = "password";
-<h4>Radio / Checkboxes</h4>
+
+<h5>Radio / Checkboxes</h5>
+
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Radio / Checkbox&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Radio / Checkbox&lt;/h5&gt;";
 $form->type = "switch";
 $form->labelBefore = "off";
 $form->labelAfter = "on";
-<hr>
+
 $form->addElement("Input");
 $form->type = "radio";
 $form->classes = "with-gap";
 $form->label = "with-gap";
 $form->id = "filled";
-<hr>
+
 $form->addElement("Input");
 $form->type = "radio";
 $form->label = "radio";
 $form->id = "asd";
-<hr>
+
 $form->addElement("Input");
 $form->type = "checkbox";
 $form->classes = "filled-in";
 $form->label = "filled-in";
 $form->id = "my";
-<hr>
+
 $form->addElement("Input");
 $form->type = "checkbox";
 $form->label = "checkbox";
 $form->id = "check";
-<h4>Textareas</h4>
+
+<h5>Textareas</h5>
+
 $form->addElement("Textarea");
-$form->headline = "&lt;h4&gt;Textareas&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Textareas&lt;/h5&gt;";
 $form->label = "Message";
 $form->id = "message";
-<hr>
+
 $form->addElement("Textarea");
 $form->label = "Message";
 $form->id = "message";
-<hr>
+
 $form->addElement("Textarea");
 $form->label = "Message";
 $form->id = "message-length";
@@ -482,21 +504,21 @@ $form->iconPrefix = "mode_edit";
 $form->classes = "validate";
 $form->length = "120";
 
-<h4>Buttons</h4>
+<h5>Buttons</h5>
 
 $form->addElement("Input");
-$form->headline = "&lt;h4&gt;Buttons&lt;/h4&gt;";
+$form->headline = "&lt;h5&gt;Buttons&lt;/h5&gt;";
 $form->label = "File Upload";
 $form->id = "file";
 $form->type = "file";
-<hr>
+
 $form->addElement("Input");
 $form->value = "Submit";
 $form->id = "reset";
 $form->wrapperClasses = "row";
 $form->classes = "btn col green m12 l12 s12";
 $form->type = "reset";
-<hr>
+
 $form->addElement("Input");
 $form->value = "Reset";
 $form->id = "submit";
@@ -504,11 +526,11 @@ $form->wrapperClasses = "row";
 $form->classes = "btn col red m12 l12 s12";
 $form->type = "submit";
 
-<h4>Close Formtag</h4>
+<h5>Close Formtag</h5>
 $form->addElement("Form");
 $form->form = "end";
 
-<h4>Rendering</h4>
+<h5>Rendering</h5>
 $form->Output();
 </pre>
 </div>
