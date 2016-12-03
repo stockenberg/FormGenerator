@@ -79,9 +79,12 @@ class FormMaster extends Presets implements \FormGenerator\Interfaces\FormMaster
      * - enctype
      *
      */
-    public function addElement(string $element){
+    public function addElement(string $element, string $id = ""){
         $this->count++;
         $this->config[$this->count]["element"] = $element;
+        if($id != ""){
+            $this->lazy($id);
+        }
     }
     /**
      * @return array

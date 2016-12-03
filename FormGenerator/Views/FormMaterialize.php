@@ -193,15 +193,17 @@ class FormMaterialize extends FormMaster
 
     private function checkbox_switch(InputInterface $input)
     {
+        $labelBefore = ($input->getLabelBefore() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelBefore() . '</label>' : '';
+        $labelAfter = ($input->getLabelAfter() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelAfter() . '</label>' : '<label for=' . $input->getID() . '>' . $input->getLabel() . '</label>';
         return "
             {$input->getBefore()}
             {$input->getHeadline()}
             <div class=\"{$input->getType()} {$input->getWrapperClasses()}\">
                 <label>
-                  {$input->getLabelBefore()}
-                  <input id='{$input->getID()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$input->getName()}' type=\"checkbox\">
+                  {$labelBefore}
+                  <input id='{$input->getID()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()} class='{$input->getClasses()}' name='{$input->getName()}' type=\"checkbox\" value='{$input->getValue()}'>
                   <span class=\"lever\"></span>
-                  {$input->getLabelAfter()}
+                  {$labelAfter}
                 </label>
               </div>
           {$input->getAfter()}
@@ -210,15 +212,20 @@ class FormMaterialize extends FormMaster
 
     private function checkbox(InputInterface $input)
     {
+        $labelBefore = ($input->getLabelBefore() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelBefore() . '</label>' : '';
+        $labelAfter = ($input->getLabelAfter() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelAfter() . '</label>' : '<label for=' . $input->getID() . '>' . $input->getLabel() . '</label>';
+
         return "
             {$input->getBefore()}
             {$input->getHeadline()}
             <p class=\"{$input->getWrapperClasses()}\">
+                  {$labelBefore}
                   <input id='{$input->getID()}' 
                   type='checkbox' {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
                   class='{$input->getClasses()}' 
-                  name='{$input->getName()}'>
-                  <label for='{$input->getID()}'>{$input->getLabel()}</label>
+                  name='{$input->getName()}' value='{$input->getValue()}'>
+                  
+                  {$labelAfter}
               </p>
           {$input->getAfter()}
         ";
@@ -226,14 +233,19 @@ class FormMaterialize extends FormMaster
 
     private function radio(InputInterface $input)
     {
+
+        $labelBefore = ($input->getLabelBefore() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelBefore() . '</label>' : '';
+        $labelAfter = ($input->getLabelAfter() != '') ? '<label for=' . $input->getID() . '>' . $input->getLabelAfter() . '</label>' : '<label for=' . $input->getID() . '>' . $input->getLabel() . '</label>';
+
         return "
         {$input->getBefore()}
         {$input->getHeadline()}
             <p>
-              <input class='{$input->getClasses()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
-              name='{$input->getName()}' 
-              type=\"radio\" id='{$input->getID()}' />
-              <label for='{$input->getID()}'>{$input->getLabel()}</label>
+                  {$labelBefore}
+                  <input class='{$input->getClasses()}'  {$input->getRequired()} {$input->getChecked()} {$input->getDisabled()}
+                  name='{$input->getName()}' 
+                  type=\"radio\" id='{$input->getID()}' value='{$input->getValue()}' />
+                  {$labelAfter}
             </p>
         {$input->getAfter()}
         ";
