@@ -113,7 +113,8 @@ $form->iconPrefix = "phone";
 $form->id = "normal";
 
 $form->addElement("Input");
-$form->before = "<p style='display: inline-block'>Das ist eine inline Textbox</p>";
+$form->before = "<p style='display: inline-block'>Das ist 
+    eine inline Textbox</p>";
 $form->type = "text";
 $form->label = "Inline Textbox";
 $form->classes = "validate";
@@ -227,7 +228,7 @@ $form->form = "end";
 <body onload="sh_highlightDocument();">
 
 <div class="row">
-    <div style="padding: 50px; width: 60%; position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll">
+    <div style="padding: 50px; width: 65%; position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll">
         <div>
             <pre style="font-family: 'Courier New'; font-size: 36px; font-weight: bold;">
 m.S(t)
@@ -238,46 +239,25 @@ m.S(t)
         <?= $form->Output(); ?>
     </div>
 
-    <pre style="padding: 50px; width: 40%; position: fixed; left: 0; top: 0; height: 100%; overflow-y: scroll"
+    <pre style="padding: 50px; width: 35%; position: fixed; left: 0; top: 0; height: 100%; overflow-y: scroll"
          class="sh_php">
+FormGenerator by Marten Stockenberg
+GNU General Public License v3.0
+<br />
+Styles, JS and Form Components - Copyright 2014-2016 Materialize
+http://materializecss.com/
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
 <ul>
-<li><h5>Global</h5></li>
-<li>name</li>
-<li>ID</li>
-<li>classes "first scnd third ..."</li>
-<li>wrapperClasses "first scnd third ..."</li>
-<li>label</li>
-<li>disabled</li>
-<li>required</li>
-<li>after "htmlmarkup will be inserted after this element"</li>
-<li>before "htmlmarkup will be inserted before this element"</li>
-<li>checked</li>
-<li>placeholder</li>
+<li><h5>Global</h5></li><li>name</li><li>ID</li><li>classes "first scnd third ..."</li><li>wrapperClasses "first scnd third ..."</li><li>label</li><li>disabled</li><li>required</li><li>after "htmlmarkup will be inserted after this element"</li><li>before "htmlmarkup will be inserted before this element"</li><li>checked</li><li>placeholder</li>
 
-<li><h5>Input Specific</h5></li>
-<li>type</li>
-<li>value</li>
-<li>min (for input type range)</li>
-<li>max (for input type range)</li>
-<li>checked</li>
-<li>labelBefore (Just for Materialize Switch)</li>
-<li>labelAfter (Just for Materialize Switch)</li>
+<li><h5>Input Specific</h5></li><li>type</li><li>value</li><li>min (for input type range)</li><li>max (for input type range)</li><li>checked</li><li>labelBefore (Just for Materialize Switch)</li><li>labelAfter (Just for Materialize Switch)</li>
 
-<li><h5>Select Specific</h5></li>
-<li>multiple</li>
-<li>size</li>
-<li>options array key => value</li>
+<li><h5>Select Specific</h5></li><li>multiple</li><li>size</li><li>options array key => value</li>
 
-<li><h5>Textarea Specific</h5></li>
-<li>text</li>
-<li>length</li>
+<li><h5>Textarea Specific</h5></li><li>text</li><li>length</li>
 
-<li><h5>Form Specific</h5></li>
-<li>action</li>
-<li>method</li>
-<li>enctype</li>
+<li><h5>Form Specific</h5></li><li>action</li><li>method</li><li>enctype</li>
 </ul>
 
 <h3>Min Setup</h3>
@@ -424,7 +404,8 @@ $form->iconPrefix = "phone";
 $form->id = "normal";
 
 $form->addElement("Input");
-$form->before = "&lt;p style='display: inline-block'>Das ist eine inline Textbox&lt;/p&gt;";
+$form->before = "&lt;p style='display: inline-block'>
+        Das ist eine inline Textbox&lt;/p&gt;";
 $form->type = "text";
 $form->label = "Inline Textbox";
 $form->classes = "validate";

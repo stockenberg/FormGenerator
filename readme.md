@@ -3,6 +3,8 @@ FormGenerator by Marten Stockenberg
 GNU General Public License v3.0
 <br />
 Styles JS and Form Components - Copyright 2014-2016 Materialize
+http://materializecss.com/
+
 <h4>Composer Autoload</h4>
 "autoload": {
     "psr-4": {
