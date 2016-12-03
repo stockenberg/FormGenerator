@@ -52,7 +52,7 @@ class FormMaterialize extends FormMaster
                             <input class=\"file-path validate\" type=\"text\">
                           </div>
                     </div>
-                {$input->getAfter()}\";
+                {$input->getAfter()}
                 ";
                 break;
 
