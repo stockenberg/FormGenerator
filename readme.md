@@ -67,7 +67,7 @@ $form->form = "end";
 <br />
 <h4>Parameter</h4>
 <ul>
-<h5>Global</h5><li>name</li><li>ID</li><li>classes "first scnd third ..."</li><li>wrapperClasses "first scnd third ..."</li><li>label</li><li>disabled</li><li>required</li><li>after "htmlmarkup will be inserted after this element"</li><li>before "htmlmarkup will be inserted before this element"</li><li>checked</li><li>placeholder</li><h5>Input Specific</h5><li>type</li><li>value</li><li>min (for input type range)</li><li>max (for input type range)</li><li>checked</li><li>labelBefore (Just for Materialize Switch)</li><li>labelAfter (Just for Materialize Switch)</li><h5>Select Specific</h5><li>multiple</li><li>size</li><li>options array key => value</li>
+<h5>Global</h5><li>name</li><li>ID</li><li>classes "first scnd third ..."</li><li>wrapperClasses "first scnd third ..."</li><li>label</li><li>disabled</li><li>required</li><li>after "htmlmarkup will be inserted after this element"</li><li>before "htmlmarkup will be inserted before this element"</li><li>checked</li><li>placeholder</li><h5>Input Specific</h5><li>type</li><li>value</li><li>min (for input type range)</li><li>max (for input type range)</li><li>checked</li><li>labelBefore</li><li>labelAfter</li><h5>Select Specific</h5><li>multiple</li><li>size</li><li>options array key => value</li>
 
 <h5>Textarea Specific</h5><li>text</li><li>length</li>
 
