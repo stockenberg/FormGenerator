@@ -61,15 +61,7 @@ class Select extends FormElement implements \FormGenerator\Interfaces\SelectInte
         $this->size = $size <=> 0;
     }
 
-    public function getIcon()
-    {
-        return $this->icon;
-    }
 
-    public function setIcon(string $icon)
-    {
-        $this->icon = "data-icon='{$icon}'";
-    }
 
 
 

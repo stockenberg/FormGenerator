@@ -8,12 +8,14 @@
 
 namespace FormGenerator\Inputs;
 
+use FormGenerator\Interfaces\MaterializeConfigInterface;
+
 
 /**
  * Class FormElement
  * @package FormGenerator\Inputs
  */
-abstract class FormElement implements \FormGenerator\Interfaces\FormElementInterface
+abstract class FormElement extends MaterializeConfig implements \FormGenerator\Interfaces\FormElementInterface
 {
 
     /**
@@ -171,15 +173,6 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElementInter
         return $this->before;
     }
 
-    public function getVariant()
-    {
-        return $this->variant;
-    }
-
-    public function setVariant(string $variant)
-    {
-        $this->variant = $variant;
-    }
 
     public function getHeadline()
     {
@@ -190,63 +183,6 @@ abstract class FormElement implements \FormGenerator\Interfaces\FormElementInter
     {
         $this->headline = $headline;
     }
-
-    public function getLength()
-    {
-        return $this->length;
-    }
-
-    public function setLength(string $length)
-    {
-        $this->length = "length='{$length}'";
-    }
-
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    public function setError(string $error)
-    {
-        $this->error = "data-error='" . $error . "'";
-    }
-
-    public function getSuccess()
-    {
-        return $this->success;
-    }
-
-    public function setSuccess(string $success)
-    {
-        $this->success = "data-success='" . $success . "'";
-    }
-
-    public function getIconPrefix()
-    {
-        return $this->iconPrefix;
-    }
-
-    public function setIconPrefix(string $iconPrefix)
-    {
-        $this->iconPrefix = "<i class='material-icons prefix'>{$iconPrefix}</i>";;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

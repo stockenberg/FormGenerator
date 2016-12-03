@@ -451,6 +451,9 @@ $form->type = "submit";
 
 $form->addElement("Form");
 $form->form = "end";
+
+<h4>Rendering</h4>
+$form->Output();
 </pre>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
