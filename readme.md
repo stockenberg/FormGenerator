@@ -7,7 +7,7 @@
   }
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
-<h5><a href="http://g.mstockenberg.de">Demo</a></h5>
+<h5>Demo: http://g.mstockenberg.de</h5>
 <ul>
 <h5>Global</h5>
 <li>name</li>
@@ -69,7 +69,7 @@ $form->form = "end";
 $form->Output();
 
 <h3>Full Setup </h3>
-<h5><a href="http://g.mstockenberg.de">Demo</a></h5>
+<h5>Demo: http://g.mstockenberg.de</h5>
 
 <h5>Get Right Library</h5>
 
