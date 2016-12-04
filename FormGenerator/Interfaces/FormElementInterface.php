@@ -13,7 +13,7 @@ namespace FormGenerator\Interfaces;
  * Interface FormElement
  * @package FormGenerator\Interfaces
  */
-interface FormElementInterface extends MaterializeConfigInterface
+interface FormElementInterface extends MaterializeConfigInterface, BootstrapConfigInterface
 {
 
     /**

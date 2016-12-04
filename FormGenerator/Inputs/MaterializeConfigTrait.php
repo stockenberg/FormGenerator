@@ -11,7 +11,7 @@ namespace FormGenerator\Inputs;
 
 use FormGenerator\Interfaces\MaterializeConfigInterface;
 
-class MaterializeConfig implements MaterializeConfigInterface
+trait MaterializeConfigTrait
 {
     private $icon;
     private $error;

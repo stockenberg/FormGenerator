@@ -41,6 +41,8 @@ class Input extends FormElement implements \FormGenerator\Interfaces\InputInterf
 
     private $labelAfter;
 
+    private $labelClasses;
+
     public function getType()
     {
         return $this->type;
@@ -110,6 +112,24 @@ class Input extends FormElement implements \FormGenerator\Interfaces\InputInterf
     {
         $this->labelAfter = $labelAfter;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLabelClasses()
+    {
+        return $this->labelClasses;
+    }
+
+    /**
+     * @param mixed $labelClasses
+     */
+    public function setLabelClasses(string $labelClasses)
+    {
+        $this->labelClasses = $labelClasses;
+    }
+
+
 
 
 

@@ -36,6 +36,11 @@ abstract class FormMaster extends Presets implements \FormGenerator\Interfaces\F
         $this->config[$this->count][$name] = $value;
     }
 
+    public function __get($name)
+    {
+        return $this->config[$this->count][$name];
+    }
+
 
     /**
      * Expects an two dimensional array, each sub-array represents an form-element

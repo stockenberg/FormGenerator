@@ -15,9 +15,10 @@ use FormGenerator\Interfaces\MaterializeConfigInterface;
  * Class FormElement
  * @package FormGenerator\Inputs
  */
-class FormElement extends MaterializeConfig implements \FormGenerator\Interfaces\FormElementInterface
+class FormElement implements \FormGenerator\Interfaces\FormElementInterface
 {
-
+    use BootstrapConfigTrait;
+    use MaterializeConfigTrait;
     /**
      * @var
      */

@@ -76,5 +76,9 @@ interface InputInterface extends FormElementInterface
 
     public function getLabelAfter();
 
+    public function setLabelClasses(string $classes);
+
+    public function getLabelClasses();
+
 
 }
