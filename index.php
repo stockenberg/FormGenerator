@@ -86,7 +86,7 @@ $lazy->form = "end";
 
 
 <ul id="slide-out" class="side-nav">
-    <a href="https://www.github.com/stockenberg/FormGenerator" style="padding: 10px; text-align: center; border-bottom: thin solid black;" target="_blank"><h5>FormGenerator auf Github</h5></a>
+    <a href="https://www.github.com/stockenberg/FormGenerator" style="padding: 10px; text-align: center; border-bottom: thin solid black;" target="_blank"><h5>FormGenerator on Github</h5></a>
     <pre class="sh_php">
         <?= file_get_contents("readme.md") ?>
     </pre>

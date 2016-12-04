@@ -18,7 +18,7 @@ use FormGenerator\Interfaces\TextareaInterface;
  * Class FormMaster
  * @package FormGenerator\Inputs
  */
-class FormMaster extends Presets implements \FormGenerator\Interfaces\FormMasterInterface
+abstract class FormMaster extends Presets implements \FormGenerator\Interfaces\FormMasterInterface
 {
 
 
@@ -150,19 +150,19 @@ class FormMaster extends Presets implements \FormGenerator\Interfaces\FormMaster
      * @param Input $input
      * @return mixed
      */
-    protected function prepareInput(InputInterface $input){}
+    abstract protected function prepareInput(InputInterface $input);
 
     /**
      * @param Textarea $input
      * @return mixed
      */
-    protected function prepareTextarea(TextareaInterface $input){}
+    abstract protected function prepareTextarea(TextareaInterface $input);
 
     /**
      * @param Select $input
      * @return mixed
      */
-    protected function prepareSelect(SelectInterface $input){}
+    abstract protected function prepareSelect(SelectInterface $input);
 
 
     /**
