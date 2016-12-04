@@ -43,9 +43,6 @@ abstract class FormMaster extends Presets implements \FormGenerator\Interfaces\F
 
 
     /**
-     * Expects an two dimensional array, each sub-array represents an form-element
-     *
-     * e.g. $config([first-element], [scnd-element] ... )
      *
      * # Global
      * - name
@@ -84,10 +81,10 @@ abstract class FormMaster extends Presets implements \FormGenerator\Interfaces\F
      * - enctype
      *
      */
-    public function addElement(string $element, string $id = ""){
+    public function addElement(string $element, string $id = NULL){
         $this->count++;
         $this->config[$this->count]["element"] = $element;
-        if($id != ""){
+        if($id != NULL){
             $this->lazy($id);
         }
     }
