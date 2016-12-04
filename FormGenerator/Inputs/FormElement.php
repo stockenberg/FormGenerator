@@ -15,7 +15,7 @@ use FormGenerator\Interfaces\MaterializeConfigInterface;
  * Class FormElement
  * @package FormGenerator\Inputs
  */
-abstract class FormElement extends MaterializeConfig implements \FormGenerator\Interfaces\FormElementInterface
+class FormElement extends MaterializeConfig implements \FormGenerator\Interfaces\FormElementInterface
 {
 
     /**

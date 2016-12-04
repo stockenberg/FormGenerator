@@ -34,7 +34,7 @@ $form->options = [
 $form->addElement("Select");
 $form->name = "Register[anrede]";
 $form->classes = "icons";
-$form->label = "Select with Icons right and circle";
+$form->label = "Select with Icons right";
 $form->wrapperClasses = "col s4 m4 l4";
 $form->options = [
     "key" => [
