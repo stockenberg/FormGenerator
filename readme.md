@@ -14,7 +14,7 @@ http://materializecss.com/
   }
 <h4>Documentation</h4>
 Questions? -> MStockenberg [AT] gmail [DOT] com
-<h5>Demo: http://g.mstockenberg.de</h5>
+<h5>Demo: http://formgen.mstockenberg.de</h5>
 
 
 <h4>Min Setup</h4>
