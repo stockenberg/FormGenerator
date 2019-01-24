@@ -74,7 +74,7 @@ $form->form = "end";
 <h5>Form Specific</h5><li>action</li><li>method</li><li>enctype</li></ul>
 
 <h4>Full Setup </h4>
-<h5>Demo: http://g.mstockenberg.de</h5>
+<h5>Demo: http://formgen.mstockenberg.de</h5>
 
 <h5>Get Right Library</h5>
 
